@@ -1,70 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>paweo</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      font-family: sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paweo</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
 
-    h1 {
-      margin: 20px 0;
-      text-align: center;
-    }
+        h1 {
+            margin: 20px 0;
+            text-align: center;
+        }
 
-    img {
-      max-width: 90%;
-      height: auto;
-    }
+        img {
+            max-width: 90%;
+            height: auto;
+        }
 
-    .logo {
-      margin-top: 30px;
-      width: 250px;
-      max-width: 60%;
-    }
+        .logo {
+            margin-top: 0px;
+            width: 250px;
+            max-width: 60%;
+        }
 
-    .content {
-      flex: 1;
-      text-align: center;
-      padding: 20px;
-    }
+        .content {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
 
-    footer {
-      margin-top: 40px;
-      margin-bottom: 10px;
-      font-size: 0.9em;
-      color: #555;
-    }
-  </style>
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .contact-item img {
+            width: 50px;
+            height: 50px;
+        }
+
+        footer {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-  
-  <!-- Première image -->
-  <img src="static/tampon1.png" alt="Tampon Paweo">
 
-  <!-- Logo principal -->
-  <img src="static/paweo.png" alt="Logo Paweo" class="logo">
-  
-  <!-- Contenu principal -->
-  <div class="content">
-    <h1>Bienvenue sur Paweo</h1>
-    <p>Site officiel en construction 🚧</p>
-  </div>
+<!-- Première image -->
+<img src="static/tampon1.png" alt="Tampon Paweo" style="max-width: 600px">
 
-  <!-- Footer -->
-  <footer>
+<!-- Logo principal -->
+<img src="static/paweo.png" alt="Logo Paweo" class="logo">
+
+<!-- Contenu principal -->
+<div class="content">
+    <h1>paweo.world</h1>
+    <p>Artiste pluridisciplinaire</p>
+</div>
+
+<!-- Section contact -->
+<div class="contact">
+    <div class="contact-item">
+        <img src="static/phone.png" alt="Téléphone">
+        <span>+33 (0) 6 98 36 20 52</span>
+    </div>
+    <div class="contact-item">
+        <img src="static/mail.png" alt="Email">
+        <span>contact@paweo.world</span>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
     © 2025 Paweo. Tous droits réservés.
-  </footer>
-  
+</footer>
+
 </body>
 </html>
