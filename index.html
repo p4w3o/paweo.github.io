@@ -72,7 +72,7 @@
 <body>
 
 <!-- Première image -->
-<object id="paweo-svg" data="static/paweo.svg" type="image/svg+xml" style="max-width: 600px"></object>
+<object id="paweo-svg" data="/static/paweo.svg" type="image/svg+xml" style="max-width: 600px"></object>
 
 <script>
     (function() {
@@ -241,7 +241,17 @@
 
 
 <!-- Logo principal -->
-<img src="static/paweo.png" alt="Logo Paweo" class="logo">
+<img id="paweologo-svg" src="/static/paweologo.svg" alt="Logo Paweo" class="logo">
+<script>
+    (function() {
+        const obj = document.getElementById('paweologo-svg');
+
+        obj.addEventListener('click', () => {
+            window.location.href = '/index.html';
+        });
+    })();
+</script>
+
 
 <!-- Contenu principal -->
 <div class="content">
@@ -252,11 +262,11 @@
 <!-- Section contact -->
 <div class="contact">
     <div class="contact-item">
-        <img src="static/phone.png" alt="Téléphone">
+        <img src="/static/icons/phone.svg" alt="Téléphone">
         <span>+33 (0) 6 98 36 20 52</span>
     </div>
     <div class="contact-item">
-        <img src="static/mail.png" alt="Email">
+        <img src="/static/icons/mail.svg" alt="Email">
         <span>contact@paweo.world</span>
     </div>
 </div>
