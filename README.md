@@ -1,2 +1,2 @@
-# paweo.github.io
+# paweo.world
 Site web de paw :)
