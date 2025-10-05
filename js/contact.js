@@ -1,10 +1,10 @@
 // /js/contact.js
 const contactHTML = `
 <div class="contact">
-    <div class="contact-item">
+    <a href="sms:+33698362052" class="contact-item">
         <img src="/static/icons/phone.svg" alt="Téléphone">
         <span>+33 (0) 6 98 36 20 52</span>
-    </div>
+    </a>
     <a href="mailto:contact@paweo.world" class="contact-item">
         <img src="/static/icons/mail.svg" alt="Email">
         <span>contact@paweo.world</span>
