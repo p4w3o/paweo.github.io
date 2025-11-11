@@ -5,9 +5,9 @@ const contactHTML = `
         <img src="/static/icons/phone.svg" alt="Téléphone">
         <span>+33 (0) 6 98 36 20 52</span>
     </a>
-    <a href="mailto:contact@paweo.world" class="contact-item">
+    <a href="mailto:contact@paweo.cc" class="contact-item">
         <img src="/static/icons/mail.svg" alt="Email">
-        <span>contact@paweo.world</span>
+        <span>contact@paweo.cc</span>
     </a>
     <a href="https://github.com/p4w3o" target="_blank" class="contact-item">
         <img src="/static/icons/gh.svg" alt="GitHub">
