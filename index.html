@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/contact.css">
+    <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/carousel.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paweo</title>
+    
+    <title>paweofolio</title>
+
+    
+    
     <style>
         body {
             display: flex;
@@ -31,9 +38,15 @@
         }
 
         .logo {
-            margin-top: 0px;
+            margin-top: 150px;
+
             width: 250px;
             max-width: 60%;
+
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+
+
         }
 
         .content {
@@ -52,177 +65,8 @@
 </head>
 <body>
 
-<!-- Première image -->
-<object id="paweo-svg" data="/static/paweo.svg" type="image/svg+xml" style="max-width: 600px"></object>
-
-<script>
-    (function() {
-        const obj = document.getElementById('paweo-svg');
-
-        obj.addEventListener('load', () => {
-            const svgDoc = obj.contentDocument;
-            const svgRoot = svgDoc.documentElement;
-
-            const pupil1 = svgDoc.getElementById('pupil1');
-            const pupil2 = svgDoc.getElementById('pupil2');
-
-            const eyebox1 = svgDoc.getElementById('eyebox1');
-            const eyebox2 = svgDoc.getElementById('eyebox2');
-
-            const pupilbox1 = svgDoc.getElementById('pupilbox1');
-            const pupilbox2 = svgDoc.getElementById('pupilbox2');
-
-            if (!pupil1 || !pupil2 || !eyebox1 || !eyebox2 || !pupilbox1 || !pupilbox2) {
-                console.warn("⚠️ Éléments manquants !");
-                return;
-            }
-
-            function getEllipseParams(ellipse) {
-                const bbox = ellipse.getBBox();
-                return {
-                    cx: bbox.x + bbox.width/2,
-                    cy: bbox.y + bbox.height/2,
-                    rx: bbox.width/2,
-                    ry: bbox.height/2
-                };
-            }
-
-            function getPupilRadius(pupil) {
-                const bbox = pupil.getBBox();
-                return Math.max(bbox.width, bbox.height)/2;
-            }
-
-            const eye1 = getEllipseParams(eyebox1);
-            const eye2 = getEllipseParams(eyebox2);
-
-            const pupilRadius1 = getPupilRadius(pupil1);
-            const pupilRadius2 = getPupilRadius(pupil2);
-
-            let target1 = {x:0,y:0}, target2 = {x:0,y:0};
-            let current1 = {x:0,y:0}, current2 = {x:0,y:0};
-            const lerp = 0.2;
-
-            function toSVGPoint(e) {
-                // On utilise clientX/clientY absolus et position du SVG dans la page
-                const rect = obj.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                // on vérifie que le SVG est chargé
-                if (!svgRoot) return {x:0, y:0};
-
-                // transformer en coordonnées SVG
-                const pt = svgRoot.createSVGPoint();
-                pt.x = x;
-                pt.y = y;
-                return pt.matrixTransform(svgRoot.getScreenCTM().inverse());
-            }
-
-
-            function moveWithinEllipse(mouse, eye, pupilRadius) {
-                const dx = mouse.x - eye.cx;
-                const dy = mouse.y - eye.cy;
-
-                // Limites séparées
-                const maxX = eye.rx - pupilRadius;
-                const maxY = eye.ry - pupilRadius;
-
-                // Vérifier si le point est déjà à l'intérieur de l'ellipse
-                const scale = Math.sqrt((dx*dx)/(maxX*maxX) + (dy*dy)/(maxY*maxY));
-
-                if(scale <= 1) {
-                    // point à l'intérieur, on le garde
-                    return { x: dx, y: dy };
-                } else {
-                    // ramener le point sur le bord de l'ellipse
-                    return { x: dx/scale, y: dy/scale };
-                }
-            }
-
-            const mouth = svgDoc.getElementById('mouth');
-
-
-            document.addEventListener('mousemove', e => {
-                const mouse = toSVGPoint(e);
-                target1 = moveWithinEllipse(mouse, eye1, pupilRadius1);
-                target2 = moveWithinEllipse(mouse, eye2, pupilRadius2);
-            });
-
-            function animate() {
-                current1.x += (target1.x - current1.x)*lerp;
-                current1.y += (target1.y - current1.y)*lerp;
-                current2.x += (target2.x - current2.x)*lerp;
-                current2.y += (target2.y - current2.y)*lerp;
-
-                pupil1.setAttribute('transform', `translate(${current1.x},${current1.y})`);
-                pupil2.setAttribute('transform', `translate(${current2.x},${current2.y})`);
-
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-
-            
-            if (mouth) {
-                let angle = 0;
-                const amplitude = 3;     // déplacement max en px
-                const rotationAmp = 0.1;   // rotation max en degrés
-                const speed = 0.4;       // vitesse du tremblement
-                let hover = false;
-
-                // détecter le hover sur le SVG
-                mouth.addEventListener('mouseenter', () => hover = true);
-                mouth.addEventListener('mouseleave', () => hover = false);
-
-                // clic sur la bouche
-                mouth.addEventListener('click', () => {
-                    window.location.href = '/portfolio.html';
-                });
-
-                function animateMouth() {
-                    if (hover) {
-                        // tremblement + rotation
-                        const dx = Math.sin(angle) * amplitude;
-                        const dy = Math.cos(angle * 1.5) * amplitude / 2;
-                        const rot = Math.sin(angle * 2) * rotationAmp;
-                        mouth.setAttribute('transform', `translate(${dx},${dy}) rotate(${rot})`);
-                        angle += speed;
-                    } else {
-                        // reset la bouche à sa position normale
-                        mouth.setAttribute('transform', `translate(0,0) rotate(0)`);
-                        angle = 0;
-                    }
-                    requestAnimationFrame(animateMouth);
-                }
-
-                animateMouth();
-            }
-
-
-
-            obj.addEventListener('click', () => {
-                window.location.href = '/portfolio.html';
-            });
-
-            document.addEventListener('click', () => {
-                pupil1.setAttribute('fill','red');
-                pupil2.setAttribute('fill','red');
-            });
-        });
-    })();
-
-</script>
-
-
-
-
-
-
-
-
-
 <!-- Logo principal -->
-<img id="paweologo-svg" src="/static/paweologo.svg" alt="Logo Paweo" class="logo">
+<img id="paweologo-svg" src="/static/server-icon.png" alt="Logo Paweo" class="logo">
 <script>
     (function() {
         const obj = document.getElementById('paweologo-svg');
@@ -233,12 +77,42 @@
     })();
 </script>
 
-
 <!-- Contenu principal -->
 <div class="content">
-    <h1>paweo.world</h1>
-    <p>Artiste pluridisciplinaire</p>
+    <h1>paweofolio</h1>
 </div>
+
+<div style="margin-top: 60px; text-align: left; max-width: 900px;">
+    <h2 style="margin-bottom: 10px;">0001.bin</h2>
+    <p style="margin-top: 0; margin-bottom: 15px; color: #555;">
+        Série photographie argentique - 2022 France Pologne Japon
+    </p>
+
+    <div class="carousel" data-folder="/static/portfolio/peloche1/" data-count="19">
+        <div class="carousel-track"></div>
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+    </div>
+</div>
+
+<div style="margin-top: 60px; text-align: left; max-width: 900px;">
+    <h2 style="margin-bottom: 10px;">crackhead vol.2</h2>
+    <p style="margin-top: 0; margin-bottom: 15px; color: #555;">
+        Extrait de carnet - collage, craie grasse, feutre, marker, encre - 2024 Japon
+    </p>
+
+    <div class="carousel" data-folder="/static/portfolio/crackheadvol2/" data-count="24">
+        <div class="carousel-track"></div>
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+    </div>
+</div>
+
+
+
+
+<script src="/js/carousel.js"></script>
+
 
 <!-- Section contact -->
 <div class="contact-placeholder"></div>
