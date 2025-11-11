@@ -5,10 +5,15 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/contact.css">
     <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/carousel.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>paweofolio</title>
 
+    
+    
     <style>
         body {
             display: flex;
@@ -33,9 +38,15 @@
         }
 
         .logo {
-            margin-top: 0px;
+            margin-top: 150px;
+
             width: 250px;
             max-width: 60%;
+
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+
+
         }
 
         .content {
@@ -55,7 +66,7 @@
 <body>
 
 <!-- Logo principal -->
-<img id="paweologo-svg" src="/static/paweologo.svg" alt="Logo Paweo" class="logo">
+<img id="paweologo-svg" src="/static/server-icon.png" alt="Logo Paweo" class="logo">
 <script>
     (function() {
         const obj = document.getElementById('paweologo-svg');
@@ -69,8 +80,39 @@
 <!-- Contenu principal -->
 <div class="content">
     <h1>paweofolio</h1>
-    <p>Le portfolio est en cours de mise à jour — vous pouvez consulter mes travaux récents sur demande.</p>
 </div>
+
+<div style="margin-top: 60px; text-align: left; max-width: 900px;">
+    <h2 style="margin-bottom: 10px;">0001.bin</h2>
+    <p style="margin-top: 0; margin-bottom: 15px; color: #555;">
+        Série photographie argentique - 2022 France Pologne Japon
+    </p>
+
+    <div class="carousel" data-folder="/static/portfolio/peloche1/" data-count="19">
+        <div class="carousel-track"></div>
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+    </div>
+</div>
+
+<div style="margin-top: 60px; text-align: left; max-width: 900px;">
+    <h2 style="margin-bottom: 10px;">crackhead vol.2</h2>
+    <p style="margin-top: 0; margin-bottom: 15px; color: #555;">
+        Extrait de carnet - collage, craie grasse, feutre, marker, encre - 2024 Japon
+    </p>
+
+    <div class="carousel" data-folder="/static/portfolio/crackheadvol2/" data-count="24">
+        <div class="carousel-track"></div>
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+    </div>
+</div>
+
+
+
+
+<script src="/js/carousel.js"></script>
+
 
 <!-- Section contact -->
 <div class="contact-placeholder"></div>
