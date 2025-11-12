@@ -1,0 +1,17 @@
+/* style.css */
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #fafafa;
+    color: #222;
+}
+
+a {
+    color: #931000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #931000;
+    text-decoration: underline;
+}
