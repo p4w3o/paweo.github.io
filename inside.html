@@ -3,10 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="/css/style.css" />
-        <link rel="stylesheet" href="/css/contact.css" />
-        <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="/css/carousel.css" />
         <link rel="stylesheet" href="/css/floorplan.css" />
+        <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon" />
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,10 +20,10 @@
                 min-height: 100vh;
                 margin: 0;
                 font-family: sans-serif;
-                background-color: #f5f5f5;
+                background-color: #333;
                 color: #222;
                 opacity: 0;
-                animation: fadeIn 1s ease-out forwards;
+                animation: fadeIn 5s ease-out forwards;
             }
 
             @keyframes fadeIn {
@@ -48,9 +46,9 @@
             }
 
             .logo {
-                margin-top: 50px;
+                margin-top: 150px;
 
-                width: 800px;
+                width: 250px;
                 max-width: 60%;
 
                 image-rendering: pixelated;
@@ -67,43 +65,15 @@
                 margin-top: 40px;
                 margin-bottom: 10px;
                 font-size: 0.9em;
-                color: #555;
+                color: #333;
             }
         </style>
     </head>
     <body>
-        <!-- Logo principal -->
-        <img
-            id="paweologo-svg"
-            src="/static/door.png"
-            alt="Logo Paweo"
-            class="logo"
-        />
-        <audio id="ow.wav" src="/sounds/ow.wav"></audio>
-        <script>
-            (function () {
-                const obj = document.getElementById("paweologo-svg");
-                const sound = document.getElementById("ow.wav");
-                obj.addEventListener("click", () => {
-                    sound.currentTime = 0; // rewind to start
-                    sound.play();
-                    sound.onended = () => {
-                        window.location.href = "/inside.html";
-                    };
-                });
-            })();
-        </script>
-
-        <!-- Contenu principal  -->
-        <div class="content">
-            <h1>paweo.cc</h1>
-        </div>
-
-        <!-- Section contact -->
-        <div class="contact-placeholder" style="margin-top: 150px"></div>
-        <script src="/js/contact.js"></script>
-
+        <!-- HEAD -->
+        <div id="floorplan-container"></div>
+        <script src="/js/floorplan.js"></script>
         <!-- Footer -->
-        <footer>© 2025 Paweo. Tous droits réservés.</footer>
+        <footer>Paweo is not here...</footer>
     </body>
 </html>

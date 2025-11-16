@@ -75,6 +75,9 @@
                 obj.addEventListener("click", () => {
                     sound.currentTime = 0; // rewind to start
                     sound.play();
+                    sound.onended = () => {
+                        window.location.href = "/inside.html";
+                    };
                 });
             })();
         </script>

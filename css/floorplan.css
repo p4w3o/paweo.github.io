@@ -1,5 +1,21 @@
 /* Furniture styling */
 .furniture {
     cursor: pointer;
-    transition: fill 0.3s;
+    transition: fill 0.5s;
+}
+
+/* Floorplan height scaling */
+#floorplan-container {
+    margin-top: 10vh;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#floorplan-container svg {
+    height: 100%;
+    width: auto;
+    display: block;
+    max-width: 100%;
 }
