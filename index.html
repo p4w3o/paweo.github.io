@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="/css/contact.css" />
         <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="/css/carousel.css" />
+        <link rel="stylesheet" href="/css/floorplan.css" />
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,16 +80,16 @@
             })();
         </script>
 
-        <!-- Contenu principal -->
+        <!-- Contenu principal  -->
         <div class="content">
             <h1>paweo.cc</h1>
         </div>
 
-        <div class="content" style="display: flex; gap: 20px">
-            <a href="/portfolio/carnets.html">carnets</a>
-            <a href="/portfolio/photos.html">photos</a>
-            <a href="/portfolio/others.html">autres</a>
-        </div>
+        <div
+            id="floorplan-container"
+            style="max-width: 800px; width: 70%; margin-top: 60px"
+        ></div>
+        <script src="/js/floorplan.js"></script>
 
         <!-- Section contact -->
         <div class="contact-placeholder" style="margin-top: 150px"></div>
