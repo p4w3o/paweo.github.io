@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 7247 8788" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;">
+    <g transform="matrix(1,0,0,1,-135.554,-92.521)">
+        <g transform="matrix(0.92141,0,0,0.92141,3758.74,4486.21)">
+            <g transform="matrix(1,0,0,1,-3932.22,-4768.44)">
+                <g id="Group" transform="matrix(2.83465,0,0,-2.83465,-461.48,9998.36)">
+                    <path id="Wire_f0000" d="M1150,3500L190,3500L190,190L360,190L360,250L250,250L250,3250L1150,3250L1150,3500Z" style="stroke:rgb(25,25,25);stroke-width:1.4px;"/>
+                    <path id="Wire001_f0000" d="M1890,3500L2910,3500L2910,190L1090,190L1090,250L2850,250L2850,3250L1890,3250L1890,3500Z" style="stroke:rgb(25,25,25);stroke-width:1.4px;"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(0.928209,0,0,0.928209,3758.74,4807.54)">
+            <g transform="matrix(1,0,0,1,-3758.74,-4387.33)">
+                <g id="Rectangle014" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle014_f0000" x="1100" y="250" width="180" height="3000" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle015" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle015_f0000" x="1280" y="3185" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle016" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle016_f0000" x="1280" y="2885" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle017" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle017_f0000" x="1280" y="2585" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle018" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle018_f0000" x="1280" y="2285" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle019" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle019_f0000" x="1280" y="1985" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle020" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle020_f0000" x="1280" y="1685" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle021" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle021_f0000" x="1280" y="1385" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle022" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle022_f0000" x="1280" y="1085" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle023" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle023_f0000" x="1280" y="785" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle024" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle024_f0000" x="1280" y="485" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle025" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle025_f0000" x="1280" y="206.495" width="1570" height="65" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle026" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle026_f0000" x="250" y="250" width="180" height="3000" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+                <g id="Rectangle028" transform="matrix(2.83465,0,0,-2.83465,-634.961,9286.3)">
+                    <rect id="Rectangle028_f0000" x="734.884" y="250" width="65" height="3000" style="stroke:rgb(25,25,25);stroke-width:0.7px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
