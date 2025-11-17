@@ -15,3 +15,12 @@ a:hover {
     color: #931000;
     text-decoration: underline;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

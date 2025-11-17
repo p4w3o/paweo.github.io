@@ -5,7 +5,7 @@ const furnitureItems = [
     width: 0.3,
     height: 0.22,
     fill: "#555555",
-    link: "/portfolio/carnets.html",
+    link: "/portfolio/illus.html",
   },
   {
     x: 0.06,
@@ -29,7 +29,7 @@ const furnitureItems = [
     width: 0.35,
     height: 0.6,
     fill: "#555555",
-    link: "https://example.com/bed",
+    link: "/portfolio/movies.html",
   },
   {
     x: 0.43,
@@ -81,10 +81,22 @@ fetch("/static/roomplannav.svg")
       rect.addEventListener("mouseleave", () =>
         rect.setAttribute("fill", originalFill),
       );
-      rect.addEventListener(
-        "click",
-        () => (window.location.href = rect.dataset.link),
-      );
+      rect.addEventListener("click", () => {
+        const audio = new Audio("/sounds/seesaw.wav");
+
+        // Disable clicking again while sound plays
+        rect.style.pointerEvents = "none";
+
+        audio.play().catch((err) => {
+          console.error("Audio play failed:", err);
+          // fallback: redirect immediately if audio fails
+          window.location.href = rect.dataset.link;
+        });
+
+        audio.addEventListener("ended", () => {
+          window.location.href = rect.dataset.link;
+        });
+      });
 
       furnGroup.appendChild(rect);
     });

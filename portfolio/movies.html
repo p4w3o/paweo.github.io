@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/contact.css" />
+        <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/css/carousel.css" />
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>paweo</title>
+
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                font-family: sans-serif;
+                background-color: #f5f5f5;
+                color: #222;
+                animation: fadeIn 1s ease-out forwards;
+            }
+
+            h1 {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            img {
+                max-width: 90%;
+                height: auto;
+            }
+
+            .logo {
+                margin-top: 150px;
+
+                width: 250px;
+                max-width: 60%;
+
+                image-rendering: pixelated;
+                image-rendering: crisp-edges;
+            }
+
+            .content {
+                flex: 1;
+                text-align: center;
+                padding: 20px;
+            }
+
+            footer {
+                margin-top: 40px;
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HEAD -->
+        <img
+            id="paweologo-svg"
+            src="/static/server-icon.png"
+            alt="Logo Paweo"
+            class="logo"
+        />
+        <audio id="ow.wav" src="/sounds/ow.wav"></audio>
+        <script>
+            (function () {
+                const obj = document.getElementById("paweologo-svg");
+                const sound = document.getElementById("ow.wav");
+                obj.addEventListener("click", () => {
+                    sound.currentTime = 0; // rewind to start
+                    sound.play();
+                    sound.onended = () => {
+                        window.location.href = "/inside.html";
+                    };
+                });
+            })();
+        </script>
+
+        <!-- NAV -->
+        <div class="content" style="margin-top: 20px">
+            <a
+                href="/index.html"
+                style="font-size: 200%; font-weight: bold; color: #222"
+                >paweo.cc</a
+            >
+        </div>
+
+        <!-- CARROUSELS -->
+
+        <div
+            style="
+                margin: 60px auto 30px auto;
+                text-align: left;
+                width: min(
+                    100% - 74px,
+                    900px
+                ); /* 5px gap each side, tries to be 900px */
+
+                box-sizing: border-box;
+            "
+        >
+            <h2 style="margin-bottom: 10px">
+                Jouer avec des jouets qui jouent avec de la nourriture
+            </h2>
+            <p style="margin-top: 0; margin-bottom: 15px; color: #555">
+                Cours métrage de marrionettes - Feutrine, carton - 2022 France
+            </p>
+
+            <div
+                style="
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    background: #000; /* avoids flashing white on load */
+                "
+            >
+                <iframe
+                    src="https://www.youtube.com/embed/HrLOBTvWQUw"
+                    allowfullscreen
+                    style="
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                        border-radius: 12px;
+                    "
+                ></iframe>
+            </div>
+        </div>
+
+        <div
+            style="
+                margin: 60px auto 30px auto;
+                text-align: left;
+                width: min(
+                    100% - 74px,
+                    900px
+                ); /* 5px gap each side, tries to be 900px */
+
+                box-sizing: border-box;
+            "
+        >
+            <h2 style="margin-bottom: 10px">motherlovemeplease.live</h2>
+            <p style="margin-top: 0; margin-bottom: 15px; color: #555">
+                Performance vidéo, trois mois de flux vidéo en direct sans
+                interruption - site web - 2024/2025 France
+            </p>
+
+            <div
+                style="
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    background: #000; /* avoids flashing white on load */
+                "
+            >
+                <iframe
+                    src="https://www.youtube.com/embed/bZ3i3uHpL84"
+                    allowfullscreen
+                    style="
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                        border-radius: 12px;
+                    "
+                ></iframe>
+            </div>
+        </div>
+
+        <div
+            style="
+                margin: 60px auto 30px auto;
+                text-align: left;
+                width: min(
+                    100% - 74px,
+                    900px
+                ); /* 5px gap each side, tries to be 900px */
+
+                box-sizing: border-box;
+            "
+        >
+            <h2 style="margin-bottom: 10px">envers</h2>
+            <p style="margin-top: 0; margin-bottom: 15px; color: #555">
+                Cours métrage d'animation 2D - art digital, vidéo - 2022 France
+            </p>
+
+            <div
+                style="
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    background: #000; /* avoids flashing white on load */
+                "
+            >
+                <iframe
+                    src="https://www.youtube.com/embed/iiVfk_9bG5o"
+                    allowfullscreen
+                    style="
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                        border-radius: 12px;
+                    "
+                ></iframe>
+            </div>
+        </div>
+
+        <script src="/js/carousel.js"></script>
+
+        <!-- Section contact -->
+        <div class="contact-placeholder" style="margin-top: 150px"></div>
+        <script src="/js/contact.js"></script>
+
+        <!-- Footer -->
+        <footer>© 2025 Paweo. Tous droits réservés.</footer>
+    </body>
+</html>
