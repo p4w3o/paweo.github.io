@@ -15,7 +15,43 @@ a:hover {
     color: #931000;
     text-decoration: underline;
 }
+/* Styles pour le conteneur principal */
+.project-container {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 900px;
+}
 
+/* Styles pour le titre */
+.project-title {
+    margin-top: 15px; /* Réduire l'espace sous le titre pour le rapprocher du sous-titre */
+    font-weight: bold;
+    font-size: 23px;
+    color: #222;
+    /* Remplacer le <a> par un <h2> pour la sémantique si ce n'est pas un lien */
+    display: block;
+}
+
+/* NOUVEAU STYLE : Styles pour le sous-titre (Medium, Date, Lieu) */
+.project-subtitle {
+    /* Rendre le texte un peu plus petit et plus discret que le titre */
+    font-size: 16px;
+    font-style: italic;
+    color: #888; /* Couleur plus claire pour le différencier du titre */
+    margin-top: 5px;
+    margin-bottom: 0px; /* Ajouter plus d'espace après le sous-titre pour le séparer du carrousel */
+    display: block;
+}
+
+/* Styles pour la description */
+.project-description {
+    /* Maintenir l'espace au-dessus de la description (qui se trouve maintenant après le carrousel) */
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6; /* Améliorer la lisibilité du texte long */
+}
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -56,7 +56,7 @@
                 margin-top: 40px;
                 margin-bottom: 10px;
                 font-size: 0.9em;
-                color: #333;
+                color: #999;
             }
         </style>
     </head>
@@ -64,7 +64,54 @@
         <!-- HEAD -->
         <div id="floorplan-container"></div>
         <script src="/js/floorplan.js"></script>
+
+        <script>
+            const breath = new Audio("/sounds/breath.wav");
+            breath.loop = true;
+            breath.volume = 0.5; // optional, adjust volume
+
+            // Try to autoplay immediately
+            breath.play().catch(() => {
+                // If autoplay is blocked, wait for first user interaction
+                const startAudio = () => {
+                    breath.play();
+                    document.removeEventListener("click", startAudio);
+                    document.removeEventListener("keydown", startAudio);
+                };
+
+                document.addEventListener("click", startAudio);
+                document.addEventListener("keydown", startAudio);
+            });
+        </script>
+
         <!-- Footer -->
-        <footer>Paweo is not here...</footer>
+        <footer>
+            <a
+                href="/paweodoor.html"
+                id="presence"
+                style="display: block; text-decoration: none; color: inherit"
+            >
+                paweo n'est pas là...
+            </a>
+        </footer>
+
+        <script>
+            fetch("https://ishome.paweo.cc")
+                .then((res) => res.json())
+                .then((data) => {
+                    const link = document.getElementById("presence");
+
+                    if (data.is_home) {
+                        link.textContent = "";
+                        link.removeAttribute("href");
+                    } else {
+                        link.textContent = "paweo n'est pas là...";
+                    }
+                })
+                .catch(() => {
+                    document.getElementById("presence").textContent = "";
+                    link.removeAttribute("href");
+                });
+        </script>
     </body>
 </html>

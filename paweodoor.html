@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon" />
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>door</title>
+
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                font-family: sans-serif;
+                background-color: #111;
+                color: #222;
+                opacity: 0;
+                animation: fadeIn 5s ease-out forwards;
+            }
+
+            h1 {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            img {
+                max-width: 90%;
+                height: auto;
+            }
+
+            .logo {
+                margin-top: 50px;
+
+                height: 80vh; /* 80% of viewport height */
+                width: auto; /* keep aspect ratio */
+
+                max-height: 80vh; /* optional, ensures it never exceeds 80% of viewport */
+                max-width: 90vw; /* optional, prevents overflow on narrow screens */
+
+                image-rendering: pixelated;
+                image-rendering: crisp-edges;
+            }
+
+            .content {
+                flex: 1;
+                text-align: center;
+                padding: 20px;
+            }
+
+            footer {
+                margin-top: 40px;
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Logo principal -->
+        <img
+            id="door"
+            src="/static/paweodoor.png"
+            alt="Logo Paweo"
+            class="logo"
+        />
+
+        <audio id="intrude.wav" src="/sounds/ow.wav"></audio>
+
+        <div
+            id="tooltip"
+            style="
+                position: absolute;
+                pointer-events: none;
+                padding: 5px 10px;
+                background: rgba(0, 0, 0, 0.8);
+                color: #fff;
+                border-radius: 5px;
+                font-size: 1em;
+                display: none;
+                white-space: nowrap;
+            "
+        >
+            entrer
+        </div>
+
+        <script>
+            const logo = document.getElementById("door");
+            const tooltip = document.getElementById("tooltip");
+
+            fetch("https://ishome.paweo.cc")
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.is_home) {
+                        tooltip.textContent = "...";
+                    } else {
+                        logo.addEventListener("mousemove", (e) => {
+                            tooltip.style.left = e.pageX + 10 + "px"; // offset a bit from cursor
+                            tooltip.style.top = e.pageY + 10 + "px";
+                            tooltip.style.display = "block";
+                        });
+
+                        logo.addEventListener("mouseleave", () => {
+                            tooltip.style.display = "none";
+                        });
+                    }
+                })
+                .catch(() => {
+                    document.getElementById("presence").textContent =
+                        tooltip.textContent = "...";
+                });
+        </script>
+    </body>
+</html>
