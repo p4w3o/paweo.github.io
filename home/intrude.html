@@ -71,7 +71,7 @@
             class="logo"
         />
 
-        <audio id="intrude.wav" src="/sounds/ow.wav"></audio>
+        <audio id="intrude.mp3" src="/sounds/doorkick.mp3"></audio>
 
         <div
             id="tooltip"
@@ -91,8 +91,9 @@
         </div>
 
         <script>
-            const logo = document.getElementById("door");
+            const door = document.getElementById("door");
             const tooltip = document.getElementById("tooltip");
+            const sound = document.getElementById("intrude.mp3");
 
             fetch("https://ishome.paweo.cc")
                 .then((res) => res.json())
@@ -100,13 +101,21 @@
                     if (data.is_home) {
                         tooltip.textContent = "...";
                     } else {
-                        logo.addEventListener("mousemove", (e) => {
+                        door.addEventListener("click", () => {
+                            sound.currentTime = 0; // rewind to start
+                            sound.play();
+                            sound.onended = () => {
+                                window.location.href = "/inside.html";
+                            };
+                        });
+
+                        door.addEventListener("mousemove", (e) => {
                             tooltip.style.left = e.pageX + 10 + "px"; // offset a bit from cursor
                             tooltip.style.top = e.pageY + 10 + "px";
                             tooltip.style.display = "block";
                         });
 
-                        logo.addEventListener("mouseleave", () => {
+                        door.addEventListener("mouseleave", () => {
                             tooltip.style.display = "none";
                         });
                     }
